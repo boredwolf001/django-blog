@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+| Dashboard
+{% endblock %}
+
+{% block content %}
+<h1 class="display-4 mt-2">Welcome, {{ request.user.username }}</h1>
+<p>Your articles</p>
+{% if articles %}
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Title</th>
+			<th scope="col">Description</th>
+			<th scope="col">Views</th>
+			<th scope="col"></th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for article in articles %}
+		<tr>
+			<th scope="row"><a style="color: #000; font-size: 20px;" href="/articles/{{article.id}}"
+					class="display-1">{{article.title}}</a></th>
+			<td>{{article.description}}</td>
+			<td>{{article.views}}</td>
+			<td><a href="/articles/edit/{{article.id}}"><i class="fa-1x fas fa-edit"></i></a></td>
+			<td><a href="/articles/delete/{{article.id}}"><i style="color: red;" class="fas fa-trash fa-1x"></i></a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% else %}
+<p>There are no articles to show</p>
+{% endif %}
+{% endblock %}

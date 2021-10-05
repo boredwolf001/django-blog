@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+| A place for write your story
+{% endblock %}
+
+{% block content %}
+<div class="content m-auto"
+	style="width: 600px;display: flex; align-items: center; justify-content: center; flex-direction: column;">
+	<h1 class="display-4 mt-3 mb-5" style="font-size: 40px;">Bloqz | A Place For Write You Story</h1>
+	<a href="/auth/login" style="display: block;" class="mb-2 btn-block btn btn-small btn-primary">Login now</a>
+	<a href="/auth/register" style="display: block;" class="btn-block btn btn-small btn-dark">Signup for free</a>
+</div>
+{% endblock %}

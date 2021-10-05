@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+| {{article.title}}
+{% endblock %}
+
+{% block content %}
+<h1 class="display-4 mt-2">{{article.title}}</h1> {% if request.user.username == article.user.username %}<a
+	href="/articles/edit/{{article.id}}"><i style="float: right;" class="fas fa-edit fa-2x"></i></a>{% endif %}
+<h3 style="font-size: 18px;" class="h3 display-2 mt-1">Article by {{article.user.username}}</h3>
+<hr>
+<div class="content">
+	{{article.body | safe}}
+</div>
+<a href="/articles" class="btn btn-small btn-secondary my-3">Back To Articles</a>
+{% endblock %}

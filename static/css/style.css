@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: none;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  background-color: #f8f8f8;
+}
+
+.edit-icon {
+  color: #fff;
+  text-decoration: none;
+  background-color: royalblue;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-icon i {
+  color: #fff;
+}
+
+.views {
+  margin: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.article-heading {
+  color: #000;
+  text-decoration: none;
+}
+
+.article-heading h3 {
+  color: #000;
+  text-decoration: none;
+}
+
+.profile-box {
+  width: 700px;
+  padding: 30px;
+  background-color: #fff;
+  color: #000;
+}
+
+.profile-box .info {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-box .name-email {
+  margin-left: 20px;
+  float: right;
+}
+
+.profile-box .profile-icon {
+  margin-bottom: 20px;
+}
