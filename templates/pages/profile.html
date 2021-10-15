@@ -1,30 +1,36 @@
-{% extends 'base.html' %}
-
-{% block title %}
-| Profile of {{ profile.username }}
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} | Profile of {{ profile.username }}
+{% endblock %} {% block content %}
 <div class="profile-box mt-4 mx-auto">
-	<div class="info">
-		<div class="name-email">
-			<h2>{{ profile.username }}</h2>
-			<p>{{profile.email}}</p>
-		</div>
-	</div>
-	<hr>
+  <div class="info">
+      <img src="{{ user.profile.profile_img }}" class="profile-icon mb-2" style="display: inline; width: 50px;" alt="" />
+    <div class="name-email">
+      <h2>{{ profile.username }}</h2>
+      <p>{{profile.email}}</p>
+    </div>
+  </div>
+  <hr />
 
-	<form action="/auth/update" method="POST">
-		{% csrf_token %}
-		<div class="form-group">
-			<label for="Username">Username</label>
-			<input name="username" class="form-control" value="{{profile.username}}" type="text">
-		</div>
-		<div class="form-group">
-			<label for="">Email</label>
-			<input name="email" class="form-control" value="{{profile.email}}" type="email">
-		</div>
-		<button class="btn btn-small btn-outline-primary">Update</button>
-	</form>
+  <form action="/auth/update" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Username">Username</label>
+      <input
+        name="username"
+        class="form-control"
+        value="{{profile.username}}"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input
+        name="email"
+        class="form-control"
+        value="{{profile.email}}"
+        type="email"
+      />
+    </div>
+    <button class="btn btn-small btn-outline-primary">Update</button>
+  </form>
 </div>
 {% endblock %}

@@ -21,6 +21,8 @@ from django.urls import path, include
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
+from blog.models import Profile
+
 
 def register(request):
     if request.method == 'POST':
@@ -42,6 +44,9 @@ def register(request):
                 user = User.objects.create_user(
                     request.POST['name'], request.POST['email'], request.POST['password'])
                 user.save()
+                profile = Profile.objects.create(user=user)
+                profile.setProfile()
+                profile.save()
                 return HttpResponseRedirect('/auth/login')
             except django.db.IntegrityError:
                 errors.append('User already exists')
